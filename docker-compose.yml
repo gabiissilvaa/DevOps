@@ -1,0 +1,16 @@
+services:
+  app:
+    # Constrói a imagem a partir do Dockerfile no diretório atual (.)
+    build: .
+    # Nome do contêiner para facilitar a referência
+    container_name: minha-aplicacao-python
+    # Mapeia a porta 8000 do seu computador para a porta 8000 do contêiner,
+    # conforme definido no seu Dockerfile (EXPOSE 8000).
+    ports:
+      - "8000:8000"
+    # Monta o diretório atual no contêiner para desenvolvimento em tempo real.
+    # Alterações no seu código local serão refletidas dentro do contêiner.
+    volumes:
+      - .:/app
+    # Carrega variáveis de ambiente de um arquivo .env (opcional).
+    
